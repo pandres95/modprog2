@@ -13,8 +13,8 @@ C:\Users\Usuario\Documents\Modelos>git clone -b trabajos-anteriores https://gith
 Tareas pendientes
 ========
 
-- [ ] Leer una matriz de un archivo de texto.
-- [X] Encontrar la posición inicial del laberinto.
-- [X] Resolver filas.
-- [ ] Resolver columnas.
-- [ ] Realizar recursividad.
+1. Leer una matriz de un archivo de texto.
+2. Encontrar la posición inicial del laberinto. ✔
+3. Resolver filas. ✔
+4. Resolver columnas.
+5. Realizar recursividad.
