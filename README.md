@@ -1,5 +1,4 @@
 # Modelos de Programación II
-========
 
 Rama de trabajo(s) actuales. Las instrucciones para clonar el repositorio son las siguientes.
 
@@ -10,7 +9,6 @@ C:\Users\Usuario\Documents\Modelos>git clone https://github.com/pandres95/modpro
 ```
 
 ##Tareas pendientes
-========
 
 1. Leer una matriz de un archivo de texto.
 2. Encontrar la posición inicial del laberinto. ✔
