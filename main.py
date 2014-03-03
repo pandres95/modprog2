@@ -1,5 +1,9 @@
 from m_prints import *
 
+def Archivo(Dir):
+    with open(Dir) as archivo:
+        return [ [int(x) for x  in line if x !="\n"] for line in archivo ]
+
 def arranque(m, x, y):
     return (x, y) if m[x][y] == 1 else arranque(m, x+1, y)
 
@@ -26,9 +30,9 @@ laberinto1 = [[0,0,0,0,0,0,0,0],
               [0,0,0,0,0,1,2,0],
               [0,0,0,0,0,0,0,0]]
 
-laberinto2 = [[0,0,0,0,0,0,0,0,0,0,0],
-              [1,1,1,2,0,0,0,0,0,0,0],
-              [0,0,0,0,0,0,0,0,0,0,0]]
+
+
+laberinto2 = (Archivo('prueba.txt'))
 
 m_print(laberinto1)
 print()
