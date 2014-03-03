@@ -10,7 +10,7 @@ $ git clone https://github.com/pandres95/modprog2.git
 
 ##Tareas pendientes
 
-1. Leer una matriz de un archivo de texto.
+1. Leer una matriz de un archivo de texto. :heavy_check_mark:
 2. Encontrar la posición inicial del laberinto. :heavy_check_mark:
 3. Resolver filas. :heavy_check_mark:
 4. Resolver columnas.
