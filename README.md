@@ -10,8 +10,7 @@ $ git clone https://github.com/pandres95/modprog2.git
 
 ##Tareas pendientes
 
-1. Leer una matriz de un archivo de texto. :heavy_check_mark:
-2. Encontrar la posición inicial del laberinto. :heavy_check_mark:
-3. Resolver filas. :heavy_check_mark:
-4. Resolver columnas.
-5. Realizar recursividad.
+1. Estructura del arbol n-ario. :heavy_check_mark:
+2. Listar los hijos inmediatos de un nodo dado. :heavy_check_mark:
+3. Hallar un nodo por su valor.
+4. Sumar los elementos de un nodo.
