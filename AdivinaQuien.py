@@ -1,63 +1,72 @@
-class tree:
-    def __init__(self, val = None, izq = None, der = None):
-        self.valor = val
-        self.izquierda = izq
-        self.derecha = der
+#JUAN SEBASTIAN OTÁLORA LEGUIZAMON 20121020025
+#PABLO ANDRES DORADO SUAREZ 20121020036
+#JULIAN ANDRES FORERO RODRIGUEZ 20121020024
 
-    def __str__(self):
-        return "(" + (str(self.izquierda) \
-                      if self.izquierda != None \
-                      else "()") \
-                + "(" + str(self.valor) + ")" \
-                    + (str(self.derecha) \
-                      if self.derecha != None \
-                      else "()") \
-                + ")"
+class tree():
+    def __init__(self , valor  , izquierda=None , derecha=None):
+        self.valor = valor
+        self.izquierda = izquierda
+        self.derecha = derecha
 
+def entrada(preg):
+    print preg
+    return raw_input('Respuesta : \t 1) Si \t 2) No\n')
 
-def busqueda_por_caracteristica(t, caracteristica):
-    return [None] if t == None \
-           else [t] if t.valor[1::] == caracteristica \
-           else busqueda_por_caracteristica(t.izquierda, caracteristica) + \
-           busqueda_por_caracteristica(t.derecha, caracteristica)
-        
-
-
-clue = tree("Clue",
-            tree("CHombre",
-                 tree("CEs alto",
-                      tree("Daza"),
-                      tree("CTiene lentes",
-                           tree("Sebastian"),
-                           tree("Pablo")
-                      )
-                 )
-            ),
-            tree("CMujer",
-                 tree("CTiene lentes",
-                      tree("Laura")
-                      )
-                 )
-            )
-
-leaf = lambda t: t.derecha == None and t.izquierda == None
-
-def i_hojas(t, f = False):
-    if t.izquierda == None and t.derecha == None: #Es hoja
-            print(t.valor)
-    elif t.izquierda != None and not leaf(t.izquierda):
-        if t.izquierda != None:
-            i_hojas(t.izquierda, True)
-        i_hojas(t.derecha, True)
-    elif t.valor in ["CHombre", "CMujer"]:
-        if t.izquierda != None:
-            i_hojas(t.izquierda, True)
-        if t.derecha != None:
-            i_hojas(t.derecha, True)
+def busqueda_rec(arbol):
+    if arbol.izquierda==None:
+        return arbol.valor
     else:
-        if t.izquierda != None:
-            i_hojas(t.izquierda)
+        if entrada(arbol.valor)=='1':
+            return busqueda_rec(arbol.izquierda)
+        else:
+            return busqueda_rec(arbol.derecha)           
 
-#print(clue)
-print("Hombre:")
-[i_hojas(t) for t in list(filter(lambda x: type(x) == tree,busqueda_por_caracteristica(clue, "Tiene lentes")))]
+arbol = tree("Es hombre",
+             tree("Es calvo",
+                   tree("Tiene bigote",
+                        tree("Con lunar",
+                             tree("Pedro"),
+                             tree("Miguel")
+                             ),
+                             tree("Tiene ojos verdes",
+                                  tree("David"),
+                                  tree("Andres")     
+                                  )
+                        ),
+                        tree("Tiene camisa",
+                        tree("Tiene corbata",
+                              tree("Juan"),
+                              tree("Lucas")
+                              ),
+                                tree("Tiene chaleco",
+                                     tree("Mateo"),
+                                     tree("Gerardo"))
+                        )     
+                    ),
+                   tree("Es casada",
+                        tree("Es mama",
+                             tree("Es rubia",
+                                  tree("Camila"),
+                                  tree("Maria")
+                                  )
+                             ,
+                             tree("Tiene canas",
+                                  tree("Julia"),
+                                  tree("Susana")
+                                  )
+                             ),
+                            tree("Estudia",
+                                 tree("Tiene ojos azules",
+                                      tree("Lina"),
+                                      tree("Marcela")
+                                      ),
+                                        tree("Trabaja",
+                                             tree("Mercedes"),
+                                             tree("Margarita")
+                                             )
+                         )
+                   )
+            )
+        
+                  
+print busqueda_rec(arbol)
