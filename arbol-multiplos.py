@@ -95,9 +95,9 @@ def buscar_hijo_valor(nodo, valor):
                        for hijo in filter(lambda x: valor % x.valor == 0, nodo.hijos)
                        ]
                       )[0]
-            else:
-                return None 
+        else:
+            return None
         
     
 print(clue)
-imprimir_hijos_valor(clue, 100)
+imprimir_hijos_valor(clue, 10)
