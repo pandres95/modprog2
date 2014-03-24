@@ -1,11 +1,5 @@
 from __future__ import print_function
 
-'''
-Created on 10/03/2014
-
-@author: Juanforo
-'''
-
 class tree:
     def __init__(self, val = None, arboles = []):
         self.valor = val
@@ -71,12 +65,10 @@ def suma_hijos(nodo):
 
 def imprimir_hijos_valor(nodo, valor):
     if buscar_hijo_valor(nodo, valor) != None:
-        print('Hola')
         x = buscar_hijo_valor(nodo, valor)
-        print('Este es')
         print(x) 
     else:
-         print(None)
+        print(None)
 
 def buscar_hijo_valor(nodo, valor):
     
@@ -97,7 +89,24 @@ def buscar_hijo_valor(nodo, valor):
                       )[0]
         else:
             return None
-        
-    
-print(clue)
+def insertar(arbol,num):
+    if len([x for x in arbol.hijos if num%x.valor==0])==0:
+        return tree(arbol.valor,arbol.hijos+[tree(num)])
+    else:
+        return tree(arbol.valor,insertarhijos(arbol.hijos,num))
+         
+         
+def insertarhijos(lista,num):
+    if  (num%lista[0].valor==0):
+        return [insertar(lista[0],num)]+lista[1:]
+    else:
+        return [lista[0]]+insertarhijos(lista[1:],num)
+                
+#Imprimir arbol    
+print(clue,'\n')
+#impimir hijos de un nodo
 imprimir_hijos_valor(clue, 10)
+#insertar nodo
+clue=insertar(clue,18)
+#suma de subnodos a partir de un nodo
+print (suma_hijos(clue))
